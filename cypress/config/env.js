@@ -1,4 +1,4 @@
-env:
-{
-  baseUrl: 'http://www.practicesoftwaretesting.com/'
-}
+// env:
+// {
+//   baseUrl: 'http://www.practicesoftwaretesting.com/'
+// }
