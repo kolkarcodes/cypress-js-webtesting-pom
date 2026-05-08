@@ -1,5 +1,5 @@
 import LoginPage from '../../pages/LoginPage';
-import BasePage from '../../pages/BasePage';
+
 
 describe('Login Test', () => {
   it('should login successfully with valid credentials', () => {
@@ -11,11 +11,15 @@ describe('Login Test', () => {
       LoginPage.enterEmailId(users.validAdminUser.email);
       LoginPage.verifyLabelText('label[for="password"]', 'Password *');
       LoginPage.enterPassword(users.validAdminUser.password);
-      LoginPage.verifyLabelText('[data-test="login-submit"]', 'Login');
+      LoginPage.verifyElementValue(
+        '[data-test="login-submit"]',
+        'Login'
+      );
+      // LoginPage.verifyLabelText('[data-test="login-submit"]', 'Login');
       LoginPage.clickLoginButton();
 
-    // assertions to verify successful login - checking url contains dashboard keyword
-    cy.url().should('include', '/dashboard');
+      // assertions to verify successful login - checking url contains dashboard keyword
+      cy.url().should('include', '/dashboard');
+    });
   });
-});
 });
