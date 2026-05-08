@@ -31,8 +31,6 @@ cypress/
 ├── fixtures/            # Test data
 │   ├── example.json
 │   └── users.json
-├── config/
-│   └── env.js           # Environment configuration
 ├── support/
 │   ├── commands.js      # Custom commands
 │   ├── e2e.js           # Global configuration
