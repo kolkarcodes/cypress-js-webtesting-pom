@@ -1,4 +1,5 @@
 import LoginPage from '../../pages/LoginPage';
+import BasePage from '../../pages/BasePage';
 
 describe('Login Test', () => {
   it('should login successfully with valid credentials', () => {
@@ -6,8 +7,11 @@ describe('Login Test', () => {
 
       LoginPage.visit();
       cy.contains('Login').should('be.visible');
+      LoginPage.verifyLabelText('label[for="email"]', 'Email address *');
       LoginPage.enterEmailId(users.validAdminUser.email);
+      LoginPage.verifyLabelText('label[for="password"]', 'Password *');
       LoginPage.enterPassword(users.validAdminUser.password);
+      LoginPage.verifyLabelText('[data-test="login-submit"]', 'Login');
       LoginPage.clickLoginButton();
 
     // assertions to verify successful login - checking url contains dashboard keyword

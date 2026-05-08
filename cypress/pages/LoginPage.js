@@ -1,4 +1,6 @@
-class LoginPage {
+import BasePage from './BasePage';
+
+class LoginPage extends BasePage {
     visit() {
         cy.visit('/auth/login');
     }
@@ -13,6 +15,10 @@ class LoginPage {
 
     clickLoginButton(){
         cy.get('[data-test="login-submit"]').should('be.visible').should('not.be.disabled').click();
+    }
+
+    verifyEmailLabel(expectedEmailLabel){
+        cy.get('label[for="email"]').should('be.visible').and('have.text', expectedEmailLabel);
     }
 }
 
