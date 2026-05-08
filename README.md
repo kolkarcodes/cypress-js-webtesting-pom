@@ -140,4 +140,4 @@ describe('Login Tests', () => {
 
 ## License
 
-ISC
+MIT
