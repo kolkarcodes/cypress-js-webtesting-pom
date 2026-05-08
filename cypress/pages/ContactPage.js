@@ -1,21 +1,22 @@
-import BasePage from './BasePage';
 
-export class ContactPage extends BasePage {
+ class ContactPage  {
 
 
     visit() {
         cy.visit('/');
     }
 
-    // get contactUsButton() {
-    //     return cy.get('[data-test="contact-us-button"]');
-    // }
+    clickonContactLink() {
+        cy.get('[data-test="nav-contact"]')
+          .should('be.visible')
+          .click();
+    }
 
     
 
     fillContactForm(firstName,lastName, email, message) {
-        cy.get('#firstname').type(firstName);
-        cy.get('#lastname').type(lastName);
+        cy.get('#first_name').type(firstName);
+        cy.get('#last_name').type(lastName);
         cy.get('#email').type(email);
         cy.get('#message').type(message);
     }
@@ -33,10 +34,16 @@ export class ContactPage extends BasePage {
     }
 
     verifyHeaderVisible(headerText) {
-        cy.get('h1')
+        cy.get('h3')
           .should('contain.text', headerText)
           .and('be.visible');
     }   
+
+    getAlertMessage() {
+    return cy.get('.alert')
+             .should('be.visible')
+             .invoke('text');
+}
 }
 
 export default new ContactPage();

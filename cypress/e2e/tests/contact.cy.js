@@ -2,14 +2,35 @@ import ContactPage from '../../pages/ContactPage';
 
 describe('Contact Test', () => {
 
-  it('should submit the contact form successfully', () => {
+  it('User should submit the contact form successfully', () => {
+    cy.fixture('contact').then((contactInfo) => {
+
       ContactPage.visit();
-      ContactPage.clickContactLink();
+
+      ContactPage.clickonContactLink();
+
       ContactPage.verifyHeaderVisible('Contact');
-      ContactPage.fillContactForm('John', 'Doe', 'john.doe@example.com', 'This is a test message to check functionality purposes.');
-      ContactPage.selectSubject('Webmaster');
+
+      ContactPage.fillContactForm(
+        contactInfo.contactInfo.firstName,
+        contactInfo.contactInfo.lastName,
+        contactInfo.contactInfo.email,
+        contactInfo.contactInfo.message
+      );
+
+      ContactPage.selectSubject(contactInfo.contactInfo.subject);
+
       ContactPage.submitContactForm();
-      ContactPage.verifySuccessMessage();
+
+      ContactPage.getAlertMessage().then((text) => {
+
+          expect(text)
+            .to.contain(contactInfo.contactInfo.alertMessage);
+
+      });
+
+    });
 
   });
+
 });
