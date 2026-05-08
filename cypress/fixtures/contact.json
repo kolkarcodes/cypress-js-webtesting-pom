@@ -1,0 +1,10 @@
+{
+  "contactInfo":{
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "John.Doe@example.com",
+    "message": "This is a test message to check functionality purposes.",
+    "subject": "Webmaster",
+    "alertMessage": "Thanks for your message! We will contact you shortly."
+  }
+}
