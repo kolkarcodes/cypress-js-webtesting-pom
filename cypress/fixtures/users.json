@@ -2,5 +2,10 @@
   "validAdminUser": {
     "email": "admin@practicesoftwaretesting.com",
     "password": "welcome01"
+  },
+
+  "validCustomerUser": {
+    "email": "customer@practicesoftwaretesting.com",
+    "password": "welcome01"
   }
 }

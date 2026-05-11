@@ -1,3 +1,4 @@
+
 describe('Auth API Test',()=>{
     it('should login successfully with valid credentials', () => {
         cy.request({
@@ -9,7 +10,6 @@ describe('Auth API Test',()=>{
             }
         }).then((response) => {
             expect(response.status).to.eq(200);
-            // expect(response.body).to.have.property('token');
         });
     });
 });
