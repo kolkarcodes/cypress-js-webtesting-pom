@@ -15,7 +15,6 @@ describe('Login Test', () => {
         '[data-test="login-submit"]',
         'Login'
       );
-      // LoginPage.verifyLabelText('[data-test="login-submit"]', 'Login');
       LoginPage.clickLoginButton();
 
       // assertions to verify successful login - checking url contains dashboard keyword

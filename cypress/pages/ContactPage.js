@@ -12,8 +12,6 @@
           .click();
     }
 
-    
-
     fillContactForm(firstName,lastName, email, message) {
         cy.get('#first_name').type(firstName);
         cy.get('#last_name').type(lastName);
