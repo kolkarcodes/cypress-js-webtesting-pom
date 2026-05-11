@@ -21,7 +21,6 @@ describe('Products API Test', () => {
 
     });
 
-
   });
 
   describe('Single Product API Test', () => {

@@ -5,8 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:headed": "cypress run --headed",
+    "cy:chrome": "cypress run --browser chrome",
+    "cy:api": "cypress run --spec 'cypress/e2e/apiTesting/**/*.cy.js'",
+    "cy:ui": "cypress run --spec 'cypress/e2e/uitests/**/*.cy.js'",
+    "cy:a11y": "cypress run --spec 'cypress/e2e/AccessibilityTesting/**/*.cy.js'",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +21,7 @@
     "ajv": "^8.20.0",
     "axe-core": "^4.11.4",
     "cypress": "^15.14.1",
-    "cypress-axe": "^1.7.0"
+    "cypress-axe": "^1.7.0",
+    "eslint-plugin-cypress": "^6.4.1"
   }
 }
