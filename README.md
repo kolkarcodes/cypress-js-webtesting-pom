@@ -117,7 +117,7 @@ npx cypress run --spec cypress/e2e/tests/**/*.cy.js
 ## Run API Tests
 
 ```bash
-npx cypress run --spec cypress/e2e/api/**/*.cy.js
+npx cypress run --spec cypress/e2e/apiTesting/**/*.cy.js
 ```
 
 ---
@@ -125,7 +125,7 @@ npx cypress run --spec cypress/e2e/api/**/*.cy.js
 ## Run Accessibility Tests
 
 ```bash
-npx cypress run --spec cypress/e2e/accessibility/**/*.cy.js
+npx cypress run --spec cypress/e2e/AccessibilityTesting/**/*.cy.js
 ```
 
 ---
