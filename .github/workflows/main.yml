@@ -21,7 +21,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Cypress Run
+      - name: Run UI Tests
         uses: cypress-io/github-action@v6
         with:
           browser: chrome
+          command: npx cypress run --spec "cypress/e2e/tests/**/*.cy.js"
