@@ -29,3 +29,10 @@ jobs:
         with:
           browser: chrome
           command: npx cypress run --spec cypress/e2e/tests/**/*.cy.js
+
+      - name: Run API Tests
+        uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
+          command: npx cypress run --spec cypress/e2e/apiTesting/**/*.cy.js
+
