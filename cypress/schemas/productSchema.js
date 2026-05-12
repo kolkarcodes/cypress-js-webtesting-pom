@@ -1,47 +1,48 @@
 const productSchema = {
 
 
-    type: 'object',
+  type: 'object',
 
-    properties: {
+  properties: {
 
-        current_page: {
-            type: 'number'
-        },
-
-        data: {
-
-            type: 'array',
-
-            items: {
-
-                type: 'object',
-
-                properties: {
-
-                    id: {
-                        type: 'string'
-                    },
-
-                    name: {
-                        type: 'string'
-                    },
-
-                    price: {
-                        type: 'number'
-                    }
-
-                },
-
-                required: ['id', 'name', 'price']
-
-            }
-
-        }
-
+    current_page: {
+      type: 'number'
     },
 
-    required: ['data']
+    data: {
+
+      type: 'array',
+
+      items: {
+
+        type: 'object',
+
+        properties: {
+
+          id: {
+            type: 'string'
+          },
+
+          name: {
+            type: 'string'
+          },
+
+          price: {
+            type: 'number'
+          }
+
+        },
+
+        required: ['id', 'name', 'price']
+
+      }
+
+    }
+
+  },
+
+
+  required: ['data']
 
 };
 
