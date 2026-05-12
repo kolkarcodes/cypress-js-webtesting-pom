@@ -36,3 +36,10 @@ jobs:
           browser: chrome
           command: npx cypress run --spec cypress/e2e/apiTesting/**/*.cy.js
 
+      - name: Run Accessibility Tests
+        uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
+          command: npx cypress run --spec cypress/e2e/AccessibilityTesting/**/*.cy.js
+
+
