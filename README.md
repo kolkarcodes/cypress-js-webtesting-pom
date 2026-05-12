@@ -1,143 +1,272 @@
-# Cypress JavaScript Web Testing - Page Object Model
+# Cypress JS Web Testing Framework
 
-A JavaScript-based Cypress framework for E2E and UI web testing using the Page Object Model (POM) pattern.
+Enterprise-level automation framework built using Cypress, JavaScript, and Page Object Model (POM).
 
-## Project Overview
+---
 
-This project demonstrates best practices for web testing using:
-- **Cypress** - Fast, reliable end-to-end testing framework
-- **Page Object Model** - Maintains clean, maintainable test code by separating test logic from page interactions
+# 🚀 Tech Stack
 
-## Prerequisites
+- Cypress
+- JavaScript
+- Page Object Model (POM)
+- API Testing
+- Accessibility Testing
+- AJV Schema Validation
+- GitHub Actions CI/CD
 
-- Node.js (v14 or higher)
-- npm or yarn
+---
 
-## Installation
+# 📁 Project Structure
+
+```text
+cypress/
+│
+├── e2e/
+│   ├── tests/              # UI Test Scripts
+│   ├── api/                # API Test Scripts
+│   └── accessibility/      # Accessibility Test Scripts
+│
+├── fixtures/               # Test Data
+├── pages/                  # Page Objects
+├── schemas/                # JSON Schemas
+├── screenshots/            # Failure Screenshots
+├── videos/                 # Execution Videos
+│
+.github/
+└── workflows/              # GitHub Actions CI/CD Pipeline
+```
+
+---
+
+# 🚀 Features
+
+✅ UI Automation Testing using Cypress  
+✅ API Automation Testing using cy.request()  
+✅ Accessibility Testing using cypress-axe & axe-core  
+✅ Page Object Model (POM) Framework  
+✅ Generic Reusable Methods  
+✅ Schema Validation using AJV  
+✅ Fixture-Based Test Data Management  
+✅ GitHub Actions CI/CD Integration  
+✅ Screenshots & Video Capture on Failure  
+✅ Cross-browser Execution Support  
+✅ Headless & Headed Execution Support  
+
+---
+
+# 🚀 Supported Testing Types
+
+| Testing Type | Supported |
+|---|---|
+| UI Testing | ✅ |
+| API Testing | ✅ |
+| Accessibility Testing | ✅ |
+| Schema Validation | ✅ |
+| CI/CD Pipeline | ✅ |
+
+---
+
+# 🚀 Installation
+
+Clone repository:
+
+```bash
+git clone https://github.com/kolkarcodes/cypress-js-webtesting-pom.git
+```
+
+Navigate to project:
+
+```bash
+cd cypress-js-webtesting-pom
+```
+
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-## Project Structure
+---
 
-```
-cypress/
-├── e2e/
-│   └── tests/           # Test specifications
-│       └── login.cy.js  # Login test suite
-├── pages/               # Page Object Model classes
-│   └── LoginPage.js     # Login page interactions
-├── fixtures/            # Test data
-│   ├── example.json
-│   └── users.json
-├── support/
-│   ├── commands.js      # Custom commands
-│   ├── e2e.js           # Global configuration
-├── utils/               # Utility functions
-└── screenshots/         # Test failure screenshots
-```
+# 🚀 Running Tests
 
-## Running Tests
+## Open Cypress Test Runner
 
-### Interactive Mode (Recommended for Development)
 ```bash
 npx cypress open
 ```
-Opens the Cypress UI where you can select and run tests interactively.
 
-### Headless Mode (CI/CD)
+---
+
+## Run All Tests Headless
+
 ```bash
 npx cypress run
 ```
-Runs all tests in the terminal without opening a browser.
 
-### Run Specific Test File
+---
+
+## Run UI Tests
+
 ```bash
-npx cypress run --spec "cypress/e2e/tests/login.cy.js"
+npx cypress run --spec cypress/e2e/tests/**/*.cy.js
 ```
 
-### Debug Mode
-```bash
-npx cypress run --debug
-```
-Runs tests with debug output and verbose logging.
+---
 
-### Headed Mode (See Browser During Test)
+## Run API Tests
+
 ```bash
-npx cypress run --headed
+npx cypress run --spec cypress/e2e/api/**/*.cy.js
 ```
 
-## Writing Tests with Page Object Model
+---
 
-### Example: Login Test
+## Run Accessibility Tests
 
-**Page Object (`LoginPage.js`):**
+```bash
+npx cypress run --spec cypress/e2e/accessibility/**/*.cy.js
+```
+
+---
+
+# 🚀 UI Testing
+
+Framework supports UI automation testing using Cypress with:
+
+- Page Object Model (POM)
+- Reusable generic methods
+- Fixture-driven test data
+- Assertions and validations
+
+Example:
+
 ```javascript
-class LoginPage {
-  visit() {
-    cy.visit('/');
-  }
-
-  enterUsername(username) {
-    cy.get('#username').type(username);
-  }
-
-  enterPassword(password) {
-    cy.get('#password').type(password);
-  }
-
-  clickLogin() {
-    cy.get('button[type="submit"]').click();
-  }
-
-  verifyLoginSuccess() {
-    cy.get('.dashboard').should('be.visible');
-  }
-}
-
-export default new LoginPage();
+LoginPage.enterEmailId('customer@practicesoftwaretesting.com');
+LoginPage.enterPassword('welcome01');
+LoginPage.clickLoginButton();
 ```
 
-**Test Specification (`login.cy.js`):**
+---
+
+# 🚀 API Testing
+
+Framework supports API automation testing using Cypress `cy.request()`.
+
+Implemented APIs include:
+
+- Login API
+- Products API
+- Categories API
+- Contact API
+- Schema Validation APIs
+
+Example:
+
 ```javascript
-import LoginPage from '../../pages/LoginPage';
-
-describe('Login Tests', () => {
-  beforeEach(() => {
-    LoginPage.visit();
-  });
-
-  it('should login with valid credentials', () => {
-    LoginPage.enterUsername('user@example.com');
-    LoginPage.enterPassword('password123');
-    LoginPage.clickLogin();
-    LoginPage.verifyLoginSuccess();
-  });
-});
+cy.request({
+  method: 'GET',
+  url: 'https://api.practicesoftwaretesting.com/products'
+})
 ```
 
-## Configuration
+---
 
-- **Base URL**: Configured in `cypress.config.js`
-- **Environment Variables**: Set in `cypress/config/env.js`
-- **Custom Commands**: Add to `cypress/support/commands.js`
+# 🚀 Accessibility Testing
 
-## Features
+Accessibility testing implemented using:
 
-- ✅ Page Object Model pattern for maintainability
-- ✅ Organized test structure
-- ✅ Test fixtures and data management
-- ✅ Reusable custom commands
-- ✅ Screenshot capture on failures
-- ✅ Cross-browser support
+- cypress-axe
+- axe-core
 
-## Resources
+Example:
 
-- [Cypress Documentation](https://docs.cypress.io)
-- [Page Object Model Pattern](https://docs.cypress.io/guides/getting-started/testing-your-app#Organizing-tests)
-- [Best Practices](https://docs.cypress.io/guides/references/best-practices)
+```javascript
+cy.injectAxe();
 
-## License
+cy.checkA11y();
+```
 
-MIT
+Framework validates accessibility violations automatically during execution.
+
+---
+
+# 🚀 Schema Validation
+
+Schema validation implemented using AJV.
+
+Example:
+
+```javascript
+const valid = validate(response.body);
+
+expect(valid).to.be.true;
+```
+
+---
+
+# 🚀 CI/CD Pipeline
+
+GitHub Actions pipeline automatically:
+
+✅ Installs dependencies  
+✅ Runs UI tests  
+✅ Runs API tests  
+✅ Runs Accessibility tests  
+✅ Uploads screenshots/videos  
+✅ Executes on every push & pull request  
+
+Workflow location:
+
+```text
+.github/workflows/main.yml
+```
+
+---
+
+# 🚀 GitHub Actions
+
+Pipeline includes:
+
+- UI Tests
+- API Tests
+- Accessibility Tests
+
+---
+
+# 🚀 Reporting
+
+Framework captures:
+
+- Screenshots on failure
+- Videos for execution
+
+Folders:
+
+```text
+cypress/screenshots
+cypress/videos
+```
+
+---
+
+# 🚀 Future Enhancements
+
+- Docker Integration
+- Parallel Execution
+- Allure Reporting
+- Cypress Dashboard
+- Multi-browser Execution
+- Environment Configurations
+- Performance Testing
+
+---
+
+# 👨‍💻 Author
+
+Kolkarcodes
+
+GitHub:
+https://github.com/kolkarcodes
+
+---
