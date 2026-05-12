@@ -10,7 +10,7 @@
     "cy:headed": "cypress run --headed",
     "cy:chrome": "cypress run --browser chrome",
     "cy:api": "cypress run --spec 'cypress/e2e/apiTesting/**/*.cy.js'",
-    "cy:ui": "cypress run --spec 'cypress/e2e/uitests/**/*.cy.js'",
+    "cy:ui": "cypress run --spec 'cypress/e2e/tests/**/*.cy.js'",
     "cy:a11y": "cypress run --spec 'cypress/e2e/AccessibilityTesting/**/*.cy.js'",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
