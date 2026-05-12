@@ -10,6 +10,12 @@ describe('Auth API Test',()=>{
             }
         }).then((response) => {
             expect(response.status).to.eq(200);
+
+            expect(response.body)
+                .to.have.property('access_token');
+
+            expect(response.body.access_token)
+                .to.not.be.empty;
         });
     });
 });

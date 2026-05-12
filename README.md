@@ -23,8 +23,8 @@ cypress/
 │
 ├── e2e/
 │   ├── tests/              # UI Test Scripts
-│   ├── api/                # API Test Scripts
-│   └── accessibility/      # Accessibility Test Scripts
+│   ├── apiTesting/                # API Test Scripts
+│   └── AccessibilityTesting/      # Accessibility Test Scripts
 │
 ├── fixtures/               # Test Data
 ├── pages/                  # Page Objects
