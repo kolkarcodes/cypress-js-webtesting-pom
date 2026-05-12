@@ -25,4 +25,4 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           browser: chrome
-          command: npx cypress run --spec "cypress/e2e/tests/**/*.cy.js"
+          command: npx cypress run --spec "cypress/e2e/uitests/**/*.cy.js"
